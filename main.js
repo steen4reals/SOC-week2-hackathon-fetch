@@ -5,12 +5,12 @@ async function fetchData() {
     "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=boolean"
   );
   let data = await response.json();
-  //console.log(data);
+  console.log(data);
 }
 
 // ask for username input
 
-let username = prompt("What is your name?");
+// let username = prompt("What is your name?");
 
 // set up start button- "start";
 
@@ -21,6 +21,9 @@ document.body.appendChild(startButton);
 // when the button is clicked, pull the fetch request
 
 startButton.addEventListener("click", fetchData);
+
+D
+
 
 // display a question
 // display two other buttons - true / false
