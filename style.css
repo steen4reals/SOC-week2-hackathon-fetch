@@ -1,6 +1,9 @@
 body,
 html {
   height: 100%;
+  font-family: "Bebas Neue", cursive;
+  font-size: 30px;
+  color:black;
 }
 
 .game-over-img {
@@ -11,9 +14,11 @@ button {
   border: none;
   border-radius: 60px;
   width: 100px;
-  background-color: #4285f4;
+  background-color:#0D1117;
   padding: 10px 20px;
+  color: white;
 }
+
 
 .end-score {
   font-style: bold;
@@ -21,10 +26,15 @@ button {
   font-family: "Bebas Neue", cursive;
 }
 
-.bgImg {
+/* .bgImg {
   background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fvectors%2Fneon-question-mark-frame-quiz-lighting-interrogation-point-red-neon-vector-id1136653848%3Fk%3D6%26m%3D1136653848%26s%3D612x612%26w%3D0%26h%3DYcoo-T7YfK4mH5VNRtxuvx_li18654Ry2HVj_PyXRyA%3D&f=1&nofb=1");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100%;
+  z-index: -1;
+} */
+
+p{
+  z-index: 20;
 }
