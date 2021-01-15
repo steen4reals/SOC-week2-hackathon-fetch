@@ -1,3 +1,8 @@
+body,
+html {
+  height: 100%;
+}
+
 .game-over-img {
   width: 500px;
 }
@@ -10,18 +15,16 @@ button {
   padding: 10px 20px;
 }
 
-.end-score{
+.end-score {
   font-style: bold;
   font-size: 100px;
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 }
 
-body{
-  background-image: url("https://st2.depositphotos.com/1796022/9178/i/950/depositphotos_91788452-stock-photo-christmas-fairy-lights-border.jpg");
+.bgImg {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fvectors%2Fneon-question-mark-frame-quiz-lighting-interrogation-point-red-neon-vector-id1136653848%3Fk%3D6%26m%3D1136653848%26s%3D612x612%26w%3D0%26h%3DYcoo-T7YfK4mH5VNRtxuvx_li18654Ry2HVj_PyXRyA%3D&f=1&nofb=1");
   background-repeat: no-repeat;
   background-size: cover;
-
-}      
- 
-
-
+  background-position: center;
+  height: 100%;
+}
