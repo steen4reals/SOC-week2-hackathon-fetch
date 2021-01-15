@@ -9,3 +9,9 @@ button {
   background-color: #4285f4;
   padding: 10px 20px;
 }
+
+.end-score{
+  font-style: bold;
+  font-size: 100px;
+  font-family: 'Bebas Neue', cursive;
+}
