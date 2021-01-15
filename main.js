@@ -6,6 +6,11 @@ let data;
 let score;
 let index;
 
+
+function answerQuestion(){
+  index += 1;
+}
+
 function displayQuestion() {
   let displayQ = document.createElement("p");
   displayQ.innerText = data.results[index].question;
@@ -39,6 +44,7 @@ function startGame() {
   trueOrFalse();
 }
 
+
 async function fetchData() {
   let response = await fetch(
     "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=boolean"
@@ -60,6 +66,7 @@ document.body.appendChild(startButton);
 // when the button is clicked, pull the fetch request
 
 startButton.addEventListener("click", fetchData);
+trueButton.addEventListener("click", answerQuestion);
 
 // display a question
 // display two other buttons - true / false
