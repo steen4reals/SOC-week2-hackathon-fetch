@@ -1,0 +1,11 @@
+.game-over-img {
+  width: 500px;
+}
+
+button {
+  border: none;
+  border-radius: 60px;
+  width: 100px;
+  background-color: #4285f4;
+  padding: 10px 20px;
+}
