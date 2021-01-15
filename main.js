@@ -14,6 +14,7 @@ let falseButton = document.querySelector("#false-button");
 let displayQ = document.querySelector("p");
 let scoreDisplay = document.querySelector("#score");
 let question = document.querySelector("#question");
+let triviaImg = document.querySelector("img")
 
 trueButton.style.display = "none";
 falseButton.style.display = "none";
@@ -62,7 +63,6 @@ function displayQuestion() {
       ""
     );
     displayQ.innerText = `Question ${[index + 1]}: ${questionString}`;
-    //&quot - replace to '
     document.body.appendChild(displayQ);
     getCorrectAnswer();
   } else {
