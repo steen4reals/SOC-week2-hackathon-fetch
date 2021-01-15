@@ -5,12 +5,29 @@
 let data;
 let score;
 
+function displayQuestion(){
+  let displayQ = document.createElement("p");
+  displayQ.innerText = "LOL this is your question";
+  document.body.appendChild(displayQ);
+}
+
+function trueOrFalse(){
+  let trueButton = document.createElement("button");
+  let falseButton = document.createElement("button");
+  trueButton.innerText = "true";
+  falseButton.innerText = "false";
+  document.body.appendChild(trueButton);
+  document.body.appendChild(falseButton);
+}
+
 function startGame() {
   score = 0;
   let scoreDisplay = document.createElement("p");
   scoreDisplay.innerText = `Score: ${score}`;
   document.body.appendChild(scoreDisplay);
   document.body.removeChild(startButton);
+  displayQuestion();
+  trueOrFalse();
 }
 
 async function fetchData() {
