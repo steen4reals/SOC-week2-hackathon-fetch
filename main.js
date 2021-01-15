@@ -1,21 +1,25 @@
 // // fetch api data: 10 random questions
 // const url =
 //   "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=boolean";
-  
-let question1;
-let data;
-let answer;
 
-async function fetchData() {
-  let response = await fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=boolean");
-  data = await response.json();
-  question1 = data.results[0].question;
-  answer = data.results[0].correct_answer;
-  console.log(question1);
-  console.log(answer);
+let data;
+let score;
+
+function startGame() {
+  score = 0;
+  let scoreDisplay = document.createElement("p");
+  scoreDisplay.innerText = `Score: ${score}`;
+  document.body.appendChild(scoreDisplay);
+  document.body.removeChild(startButton);
 }
 
-
+async function fetchData() {
+  let response = await fetch(
+    "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=boolean"
+  );
+  data = await response.json();
+  startGame();
+}
 
 // ask for username input
 
