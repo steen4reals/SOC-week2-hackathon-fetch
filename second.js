@@ -20,25 +20,27 @@ trueButton.addEventListener("click", answerTrue);
 falseButton.addEventListener("click", answerFalse);
 
 function answerTrue() {
-  userAnswer = true;
+  userAnswer = "True";
   checkAnswer();
 }
 
 function answerFalse() {
-  userAnswer = false;
+  userAnswer = "False";
   checkAnswer();
 }
 
 function checkAnswer() {
-  // get correct answer
-  // get user answer
-  // compare
-  // if correct score + 1
-  // else score = score
   if (userAnswer == correctAnswer) {
-    score += 1;
+    score = score + 1;
+    scoreDisplay.innerText = `Score: ${score}`;
+    index += 1;
+    displayQuestion();
   } else {
-    console.log("you suck");
+    // console.log(`correct answer: ${correctAnswer}`);
+    // console.log(`User answer: ${userAnswer}`);
+    score = score;
+    index += 1;
+    displayQuestion();
   }
 }
 
@@ -50,7 +52,6 @@ function getCorrectAnswer() {
 function displayQuestion() {
   displayQ.innerText = data.results[index].question;
   document.body.appendChild(displayQ);
-  index += 1;
   getCorrectAnswer();
 }
 
