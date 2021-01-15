@@ -35,12 +35,12 @@ function checkAnswer() {
     scoreDisplay.innerText = `Score: ${score}`;
     index += 1;
     displayQuestion();
+
   } else {
-    // console.log(`correct answer: ${correctAnswer}`);
-    // console.log(`User answer: ${userAnswer}`);
     score = score;
     index += 1;
     displayQuestion();
+
   }
 }
 
@@ -50,9 +50,22 @@ function getCorrectAnswer() {
 }
 
 function displayQuestion() {
+  if (index < 2){
   displayQ.innerText = data.results[index].question;
+  //&quot - replace to '
   document.body.appendChild(displayQ);
   getCorrectAnswer();
+  console.log("hello")
+  } else {
+  endGame();
+  }
+}
+
+function endGame(){
+  let img = document.createElement("img");
+  img.src = "https://images.squarespace-cdn.com/content/v1/58af450eb3db2b0582612f1d/1547666385983-B2OJ1FV997UREJZUV4DV/ke17ZwdGBToddI8pDm48kNvT88LknE-K9M4pGNO0Iqd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UbeDbaZv1s3QfpIA4TYnL5Qao8BosUKjCVjCf8TKewJIH3bqxw7fF48mhrq5Ulr0Hg/videoblocks-game-over-8-bit-funky-a-funky-colorful-4k-game-over-screen-animation-letters-falling-towards-the-center-8-bit-retro-style-red-and-yellow_hcqx9_kax_thumbnail-full06.png?format=1000w";
+  document.body.appendChild(img);
+  
 }
 
 function startGame() {
