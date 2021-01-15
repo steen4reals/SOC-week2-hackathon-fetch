@@ -1,11 +1,12 @@
 // fetch api data: 10 random questions
+const api_url =
+  "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=boolean";
 
-async function fetchData() {
-  let response = await fetch(
-    "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=boolean"
-  );
+async function fetchData(url) {
+  let response = await fetch(url);
   let data = await response.json();
-  console.log(data);
+  let question1 = data.results[0].question;
+  console.log(question1);
 }
 
 // ask for username input
@@ -20,10 +21,7 @@ document.body.appendChild(startButton);
 
 // when the button is clicked, pull the fetch request
 
-startButton.addEventListener("click", fetchData);
-
-D
-
+startButton.addEventListener("click", fetchData(api_url));
 
 // display a question
 // display two other buttons - true / false
