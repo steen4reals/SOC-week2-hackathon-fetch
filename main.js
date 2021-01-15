@@ -4,24 +4,33 @@
 
 let data;
 let score;
+let index;
 
-function displayQuestion(){
+function displayQuestion() {
   let displayQ = document.createElement("p");
-  displayQ.innerText = "LOL this is your question";
+  displayQ.innerText = data.results[index].question;
   document.body.appendChild(displayQ);
+
+  // tord
+  let ans = document.createElement("p");
+  ans.innerText = data.results[index].correct_answer;
+  document.body.appendChild(ans);
 }
 
-function trueOrFalse(){
+function trueOrFalse() {
   let trueButton = document.createElement("button");
   let falseButton = document.createElement("button");
   trueButton.innerText = "true";
   falseButton.innerText = "false";
+  trueButton.setAttribute("id", "trueButton");
+  falseButton.setAttribute("id", "falseButton");
   document.body.appendChild(trueButton);
   document.body.appendChild(falseButton);
 }
 
 function startGame() {
   score = 0;
+  index = 0;
   let scoreDisplay = document.createElement("p");
   scoreDisplay.innerText = `Score: ${score}`;
   document.body.appendChild(scoreDisplay);
