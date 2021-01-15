@@ -5,26 +5,44 @@
 let data;
 let score;
 let index;
+let trueButton;
+let falseButton;
+let displayQ = document.createElement("p");
+let answer;
 
+// function answerQuestion() {
+// }
 
-function answerQuestion(){
-  index += 1;
+//trueButton.addEventListener("click", answerTrue);
+falseButton.addEventListener("click", answerFalse);
+
+function answerTrue() {
+  answer = true;
+  console.log(answer);
+}
+function answerFalse() {
+  answer = false;
+  console.log(answer);
 }
 
+// function checkAnswer(){
+//     if(data.results[index].correct_answer === )
+// }
+
 function displayQuestion() {
-  let displayQ = document.createElement("p");
   displayQ.innerText = data.results[index].question;
   document.body.appendChild(displayQ);
+  index += 1;
 
   // tord
-  let ans = document.createElement("p");
-  ans.innerText = data.results[index].correct_answer;
-  document.body.appendChild(ans);
+  //   let ans = document.createElement("p");
+  //   ans.innerText = data.results[index].correct_answer;
+  //   document.body.appendChild(ans);
 }
 
 function trueOrFalse() {
-  let trueButton = document.createElement("button");
-  let falseButton = document.createElement("button");
+  trueButton = document.createElement("button");
+  falseButton = document.createElement("button");
   trueButton.innerText = "true";
   falseButton.innerText = "false";
   trueButton.setAttribute("id", "trueButton");
@@ -42,8 +60,8 @@ function startGame() {
   document.body.removeChild(startButton);
   displayQuestion();
   trueOrFalse();
+  trueButton.addEventListener("click", displayQuestion);
 }
-
 
 async function fetchData() {
   let response = await fetch(
@@ -66,7 +84,6 @@ document.body.appendChild(startButton);
 // when the button is clicked, pull the fetch request
 
 startButton.addEventListener("click", fetchData);
-trueButton.addEventListener("click", answerQuestion);
 
 // display a question
 // display two other buttons - true / false
