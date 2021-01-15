@@ -54,12 +54,11 @@ function getCorrectAnswer() {
 }
 
 function displayQuestion() {
-  if (index < 2) {
-    displayQ.innerText = data.results[index].question;
+  if (index < 9) {
+    displayQ.innerText = `Question ${[index +1]}: ${data.results[index].question}`;
     //&quot - replace to '
     document.body.appendChild(displayQ);
     getCorrectAnswer();
-    console.log("hello");
   } else {
     endGame();
   }
@@ -113,7 +112,7 @@ function startGame() {
 
 async function fetchData() {
   let response = await fetch(
-    "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=boolean"
+    "https://opentdb.com/api.php?amount=15&type=boolean"
   );
   data = await response.json();
   startGame();
