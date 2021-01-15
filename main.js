@@ -14,7 +14,8 @@ let falseButton = document.querySelector("#false-button");
 let displayQ = document.querySelector("p");
 let scoreDisplay = document.querySelector("#score");
 let question = document.querySelector("#question");
-let triviaImg = document.querySelector("img")
+let triviaImg = document.querySelector("img");
+let userName = prompt("What is your name?");
 
 trueButton.style.display = "none";
 falseButton.style.display = "none";
@@ -26,6 +27,8 @@ startButton.addEventListener("click", fetchData);
 trueButton.addEventListener("click", answerTrue);
 falseButton.addEventListener("click", answerFalse);
 newGameButton.addEventListener("click", resetGame);
+
+
 
 function answerTrue() {
   userAnswer = "True";
@@ -77,7 +80,16 @@ function endGame() {
   document.body.appendChild(img);
   document.body.appendChild(displayFinalScore);
   displayFinalScore.setAttribute("class", "end-score");
-  displayFinalScore.innerText = `Your end score is ${score}!`;
+  if (score >9){
+  displayFinalScore.innerText = `${userName}, Your score is ${score}! What a legend`;
+  }
+  else if (score <6){
+  displayFinalScore.innerText = `${userName}, Your score is ${score}! You're rubbish at this.`;
+  }
+  else {
+    displayFinalScore.innerText = `${userName}, Your score is ${score}! Could do better. `;
+  }
+
   trueButton.style.display = "none";
   falseButton.style.display = "none";
   scoreDisplay.style.display = "none";
