@@ -5,16 +5,18 @@
 let data;
 let score;
 let index;
-let trueButton;
+let trueButton = document.querySelector(".true-button")
 let falseButton;
-let displayQ = document.createElement("p");
+let displayQ = document.querySelector("p");
 let answer;
+let scoreDisplay;
 
 // function answerQuestion() {
 // }
 
 //trueButton.addEventListener("click", answerTrue);
-falseButton.addEventListener("click", answerFalse);
+//falseButton.addEventListener("click", answerFalse);
+
 
 function answerTrue() {
   answer = true;
@@ -40,24 +42,26 @@ function displayQuestion() {
   //   document.body.appendChild(ans);
 }
 
-function trueOrFalse() {
-  trueButton = document.createElement("button");
-  falseButton = document.createElement("button");
-  trueButton.innerText = "true";
-  falseButton.innerText = "false";
-  trueButton.setAttribute("id", "trueButton");
-  falseButton.setAttribute("id", "falseButton");
-  document.body.appendChild(trueButton);
-  document.body.appendChild(falseButton);
-}
+// function trueOrFalse() {
+  // trueButton = document.createElement("button");
+  // falseButton = document.createElement("button");
+  // trueButton.innerText = "true";
+  // falseButton.innerText = "false";
+  // trueButton.setAttribute("id", "trueButton");
+  // // falseButton.setAttribute("id", "falseButton");
+  // document.body.appendChild(trueButton);
+  // document.body.appendChild(falseButton);
+
 
 function startGame() {
+  
   score = 0;
   index = 0;
-  let scoreDisplay = document.createElement("p");
+  trueButton.style.display = 'none';
+  // let scoreDisplay = document.createElement("p");
   scoreDisplay.innerText = `Score: ${score}`;
   document.body.appendChild(scoreDisplay);
-  document.body.removeChild(startButton);
+  // document.body.removeChild(startButton);
   displayQuestion();
   trueOrFalse();
   trueButton.addEventListener("click", displayQuestion);
@@ -77,8 +81,8 @@ async function fetchData() {
 
 // set up start button- "start";
 
-let startButton = document.createElement("button");
-startButton.innerText = "Start";
+// let startButton = document.createElement("button");
+// startButton.innerText = "Start";
 document.body.appendChild(startButton);
 
 // when the button is clicked, pull the fetch request
