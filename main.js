@@ -3,6 +3,7 @@ let score;
 let index;
 let userAnswer;
 let correctAnswer;
+let questionString;
 
 let displayFinalScore = document.createElement("p");
 let img = document.createElement("img");
@@ -55,7 +56,12 @@ function getCorrectAnswer() {
 
 function displayQuestion() {
   if (index < 9) {
-    displayQ.innerText = `Question ${[index +1]}: ${data.results[index].question}`;
+    questionString = data.results[index].question;
+    questionString = questionString.replace(
+      /&#039|&rsquo;|&quot;|&#39;|;/g,
+      ""
+    );
+    displayQ.innerText = `Question ${[index + 1]}: ${questionString}`;
     //&quot - replace to '
     document.body.appendChild(displayQ);
     getCorrectAnswer();
